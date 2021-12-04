@@ -1,0 +1,182 @@
+<style>
+  .table_line_400 {
+		display: table;
+		width: 400px;
+        margin:10px;
+  }
+    .table_line_600 {
+		display: table;
+		width: 600px;
+        margin:10px;
+  }
+    .table_line_700 {
+		display: table;
+		width: 700px;
+        margin:10px;
+  }  
+  .table_line_800 {
+		display: table;
+		width: 800px;
+        margin:10px;
+  }	
+  .table_line_900 {
+		display: table;
+		width: 900px;
+        margin:10px;
+  }	
+    .table_line_kankaku {
+		display: table;
+        margin:10px;
+  }
+  .table_line {
+		display: table;
+		width: 600px;
+	}
+	.block_100 {
+		display: table-cell;
+		#border: solid 1px #999;
+		width: 100px;
+	}	
+	.block_150 {
+		display: table-cell;
+		#border: solid 1px #999;
+		width: 150px;
+	}
+  .block_200 {
+		display: table-cell;
+		#border: solid 1px #999;
+		width: 200px;
+	}
+  	.block_400 {
+		display: table-cell;
+		#border: solid 1px #999;
+		width: 400px;
+	}
+  	.block_300 {
+		display: table-cell;
+		#border: solid 1px #999;
+		width: 300px;
+	}  
+	.block_s {
+		display: table-cell;
+		width: 200px;
+    }
+</style>
+ 
+<body>
+  <!--事前ローデータ　ファイルアップロード -->
+  <div class="table">
+	<div class="table_line_400">
+		<div class="block_200">事前ローデータ</div>
+		<div class="block__200"><input type="file" name="prerawdata" ></div>
+	</div>
+  <!--事前データマップ　ファイルアップロード -->
+    <div class="table_line_400">
+		<div class="block_200">事前データマップ</div>
+		<div class="block__200"><input type="file" name="predatamap" ></div>
+	</div>    
+  <!--事後ローデータ　ファイルアップロード -->
+    <div class="table_line_400">
+		<div class="block_200">事後ローデータ</div>
+		<div class="block__200"><input type="file" name="postrawdata" ></div>
+	</div>
+    <!--事後データマップ　ファイルアップロード -->
+	<div class="table_line_400">
+		<div class="block_200">事後データマップ</div>
+		<div class="block__200"><input type="file" name="postdatamap" ></div>
+	</div>
+    <!--　処理方法　	 -->
+	<div class="table_line_400">
+		<div class="block_s">処理方法</div>
+      <div class="block_200">
+      <select id="area_l" name="opt" size="3"style="width: 250px">
+	      <option value="">処理方法を選択してください▼</option>
+	      <option value="1">①本調査に紐づけ</option>
+	      <option value="2">②事前調査に紐づけ</option>      </select>
+      </div>
+	</div> 
+
+　
+
+<!-- 折り畳み展開ポインタ -->
+<div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+  <a style="cursor:pointer;"><u>▼詳細表示</u></a>
+</div>
+<!--// 折り畳み展開ポインタ -->
+
+<!-- 折り畳まれ部分 -->
+<div id="open" style="display:none;clear:both;">
+
+<!--ここの部分が折りたたまれる＆展開される部分になります。
+自由に記述してください。-->
+ 　　<div class="table_line_800">
+		<div class="block_400">■ファイルフォーマット</div>
+		<div class="block_400">■文字コード</div>
+      </div>
+ 		<div class="block_200">事前ローデータ</div>
+      <div class="block_200">
+      <select id="prerawd
+ata1" name="prerawdataformat" size="2" style="width: 150px">
+ 	      <option value="TSV">TSV▼</option>
+	      <option value="CSV">CSV</option>
+      </select>
+      </div>   
+ 		<div class="block_200">事前データマップ</div>
+      <div class="block_200">
+      <select id="prerawdata2" name="prerawdatacode" size="3" style="width: 150px">
+ 	      <option value="SJIS">SJIS▼</option>
+	      <option value="UTF8">UTF-8</option>
+        <option value="UTF16">UTF-16</option>
+      </select>
+
+      </div> 
+  <div>
+  
+  </div> 
+	<div class="table_line_800">
+      </div>
+ 		<div class="block_200">事後ローデータ</div>
+      <div class="block_200">
+      <select id="postrawd
+ata1" name="postrawdataformat" size="2" style="width: 150px">
+ 	      <option value="TSV">TSV▼</option>
+	      <option value="CSV">CSV</option>
+      </select>
+      </div>   
+ 		<div class="block_200">事後データマップ</div>
+      <div class="block_200">
+      <select id="postrawdata2" name="postrawdatacode" size="3" style="width: 150px">
+ 	      <option value="SJIS">SJIS▼</option>
+	      <option value="UTF8">UTF-8</option>
+        <option value="UTF16">UTF-16</option>
+      </select>
+          </div>
+ 	<div class="table_line_800">
+      </div>
+ 		<div class="block_300">事後データカラムの頭文字頭文字変更</div>
+  
+      <div class="block_300">
+ <input type="text" name="postini" value="M" size="10">
+      </div>   
+	<div class="table_line_800">■キーID変更
+      </div>
+ 		<div class="block_200">事後ローデータ</div>
+      <div class="block_200">
+  <input type="text" name="prekeyid" value="monitorid" size="10">
+
+      </div>   
+ 		<div class="block_200">事後データマップ</div>
+      <div class="block_200">
+  <input type="text" name="postkeyid" value="monitorid" size="10">
+          </div>   
+  </div>   　
+<!--// 折り畳まれ部分 -->
+
+<p><a href="\\R-FILES01\research-20200428\03.オペレーション部\【チーム】DP・集計/test.csv" download="sample.csv">CSVファイルをダウンロード</a></p>
+
+   	<div class="table_line_800" align="right">       <input type="submit" value="実行" >
+      </div>
+  </div>
+</body>
+
+
